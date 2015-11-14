@@ -15,6 +15,13 @@ Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/kien/rainbow_parentheses.vim.git'
 " Scala Syntax highlighting
 Plugin 'https://github.com/derekwyatt/vim-scala.git'
+" Commentary Plugin
+Plugin 'https://github.com/tpope/vim-commentary.git'
+" textobj-user plugin
+Plugin 'https://github.com/kana/vim-textobj-user.git'
+" textobj-entire plugin
+Plugin 'https://github.com/kana/vim-textobj-entire.git'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -38,3 +45,5 @@ au VimEnter,BufEnter * RainbowParenthesesLoadBraces
 :set nu
 :set tw=80
 :set ai
+:set hlsearch
+:set incsearch
