@@ -21,13 +21,18 @@ Plugin 'https://github.com/tpope/vim-commentary.git'
 Plugin 'https://github.com/kana/vim-textobj-user.git'
 " textobj-entire plugin
 Plugin 'https://github.com/kana/vim-textobj-entire.git'
-
+" vim-unimpaired
+Plugin 'https://github.com/tpope/vim-unimpaired.git'
+" Matchit.vim
+Plugin 'https://github.com/tmhedberg/matchit.git'
+" Surround.vim
+Plugin 'https://github.com/tpope/vim-surround.git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+" filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -47,3 +52,9 @@ au VimEnter,BufEnter * RainbowParenthesesLoadBraces
 :set ai
 :set hlsearch
 :set incsearch
+:set shiftwidth=4 softtabstop=4 expandtab
+:set history=200
+
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+noremap <silent><esc> <esc>:noh<CR><esc>
