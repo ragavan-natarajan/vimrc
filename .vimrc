@@ -27,6 +27,15 @@ Plugin 'https://github.com/tpope/vim-unimpaired.git'
 Plugin 'https://github.com/tmhedberg/matchit.git'
 " Surround.vim
 Plugin 'https://github.com/tpope/vim-surround.git'
+Plugin 'https://github.com/altercation/vim-colors-solarized.git'
+" Airline plugin for displaying open buffers top top
+Plugin 'vim-airline/vim-airline'
+" Themes for the Airline plugin
+Plugin 'vim-airline/vim-airline-themes'
+" To kill an open buffer without changing the layout
+Plugin 'https://github.com/qpkorr/vim-bufkill.git'
+" Nerdtree git plugin
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -55,6 +64,25 @@ au VimEnter,BufEnter * RainbowParenthesesLoadBraces
 :set shiftwidth=4 softtabstop=4 expandtab
 :set history=200
 
-cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
 noremap <silent><esc> <esc>:noh<CR><esc>
+noremap <silent><C-e> :NERDTreeToggle<cr>
+
+syntax enable
+set background=light
+colorscheme solarized
+set modifiable
+autocmd VimEnter * NERDTree
+
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline_theme='lucius'
+
+" Mapping for closing buffer
+noremap <C-c> :BD<cr>
+
+" Mappings for switching to next and previous buffers, respectively
+noremap <C-n> :bn<cr>
+noremap <C-p> :bp<cr>
