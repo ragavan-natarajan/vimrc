@@ -36,6 +36,12 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'https://github.com/qpkorr/vim-bufkill.git'
 " Nerdtree git plugin
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+" Ag plugin for searchin for lines in file
+Plugin 'rking/ag.vim'
+" For using Ag in Nerdtree
+Plugin 'mortonfox/nerdtree-ag'
+" For saving vim sessions
+Plugin 'tpope/vim-obsession.git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -86,3 +92,4 @@ noremap <C-c> :BD<cr>
 " Mappings for switching to next and previous buffers, respectively
 noremap <C-n> :bn<cr>
 noremap <C-p> :bp<cr>
+noremap <C-l> :set invnumber<cr>
