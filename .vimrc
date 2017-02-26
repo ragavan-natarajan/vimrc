@@ -10,30 +10,31 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 " Nerdtree plugin
-Plugin 'https://github.com/scrooloose/nerdtree.git'
+Plugin 'scrooloose/nerdtree.git'
 " Rainbow Paranthesis
-Plugin 'https://github.com/kien/rainbow_parentheses.vim.git'
+Plugin 'kien/rainbow_parentheses.vim.git'
 " Scala Syntax highlighting
-Plugin 'https://github.com/derekwyatt/vim-scala.git'
+Plugin 'derekwyatt/vim-scala.git'
 " Commentary Plugin
-Plugin 'https://github.com/tpope/vim-commentary.git'
+Plugin 'tpope/vim-commentary.git'
 " textobj-user plugin
-Plugin 'https://github.com/kana/vim-textobj-user.git'
+Plugin 'kana/vim-textobj-user.git'
 " textobj-entire plugin
-Plugin 'https://github.com/kana/vim-textobj-entire.git'
+Plugin 'kana/vim-textobj-entire.git'
 " vim-unimpaired
-Plugin 'https://github.com/tpope/vim-unimpaired.git'
+Plugin 'tpope/vim-unimpaired.git'
 " Matchit.vim
-Plugin 'https://github.com/tmhedberg/matchit.git'
+Plugin 'tmhedberg/matchit.git'
 " Surround.vim
-Plugin 'https://github.com/tpope/vim-surround.git'
-Plugin 'https://github.com/altercation/vim-colors-solarized.git'
+Plugin 'tpope/vim-surround.git'
+" Solarized colors
+Plugin 'altercation/vim-colors-solarized.git'
 " Airline plugin for displaying open buffers top top
 Plugin 'vim-airline/vim-airline'
 " Themes for the Airline plugin
 Plugin 'vim-airline/vim-airline-themes'
 " To kill an open buffer without changing the layout
-Plugin 'https://github.com/qpkorr/vim-bufkill.git'
+Plugin 'qpkorr/vim-bufkill.git'
 " Nerdtree git plugin
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Ag plugin for searchin for lines in file
@@ -42,6 +43,10 @@ Plugin 'rking/ag.vim'
 Plugin 'mortonfox/nerdtree-ag'
 " For saving vim sessions
 Plugin 'tpope/vim-obsession.git'
+" For folding Python code
+Plugin 'tmhedberg/SimpylFold'
+" Python's PEP8 standard indentation
+Plugin 'vim-scripts/indentpython.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -58,6 +63,8 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 " autocmd VimEnter * RainbowParenthesesActivate
+:set encoding=utf-8
+
 au VimEnter,BufEnter * RainbowParenthesesActivate
 au VimEnter,BufEnter * RainbowParenthesesLoadRound
 au VimEnter,BufEnter * RainbowParenthesesLoadSquare
@@ -68,15 +75,16 @@ au VimEnter,BufEnter * RainbowParenthesesLoadBraces
 :set hlsearch
 :set incsearch
 :set shiftwidth=4 softtabstop=4 expandtab
+:set cursorline
 :set history=200
 
 noremap <silent><esc> <esc>:noh<CR><esc>
 noremap <silent><C-e> :NERDTreeToggle<cr>
 
 syntax enable
-set background=light
 colorscheme solarized
-set modifiable
+:set background=light
+:set modifiable
 autocmd VimEnter * NERDTree
 
 " Enable the list of buffers
@@ -93,3 +101,27 @@ noremap <C-c> :BD<cr>
 noremap <C-n> :bn<cr>
 noremap <C-p> :bp<cr>
 noremap <C-l> :set invnumber<cr>
+
+" To make the nerdtree separator a vertical bar instead of showing pipes
+:set fillchars+=vert:\ 
+highlight VertSplit ctermbg=NONE
+highlight VertSplit ctermfg=NONE
+
+" Indentation for python code
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
+" For highlighting bad whitespace
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" Indentation for full stack 
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
