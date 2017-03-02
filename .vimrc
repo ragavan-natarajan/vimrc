@@ -131,24 +131,13 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
     \ set fileformat=unix 
 
-" For highlighting bad whitespace
-highlight BadWhitespace ctermbg=red guibg=red
 " To make the nerdtree separator a vertical bar instead of showing pipes
 :set fillchars+=vert:\ 
 highlight VertSplit ctermbg=NONE
 highlight VertSplit ctermfg=NONE
 
-" Indentation for python code
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
-
 " For highlighting bad whitespace
+highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " Indentation for full stack 
