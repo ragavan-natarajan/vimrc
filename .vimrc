@@ -98,10 +98,7 @@ noremap <silent><esc> <esc>:noh<CR><esc>
 noremap <silent><C-e> :NERDTreeToggle<cr>
 
 syntax enable
-<<<<<<< HEAD
 set background=dark
-=======
->>>>>>> d1c7c0a7164d121a4657610f7a4ce4f0bfbc1f19
 colorscheme solarized
 :set background=light
 :set modifiable
@@ -122,7 +119,6 @@ noremap <C-n> :bn<cr>
 noremap <C-p> :bp<cr>
 noremap <C-l> :set invnumber<cr>
 
-<<<<<<< HEAD
 let g:SimpylFold_docstring_preview = 1
 "
 " Indentation for python code
@@ -137,7 +133,6 @@ au BufNewFile,BufRead *.py
 
 " For highlighting bad whitespace
 highlight BadWhitespace ctermbg=red guibg=red
-=======
 " To make the nerdtree separator a vertical bar instead of showing pipes
 :set fillchars+=vert:\ 
 highlight VertSplit ctermbg=NONE
@@ -154,16 +149,14 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix
 
 " For highlighting bad whitespace
->>>>>>> d1c7c0a7164d121a4657610f7a4ce4f0bfbc1f19
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " Indentation for full stack 
 au BufNewFile,BufRead *.js, *.html, *.css
-<<<<<<< HEAD
     \ set tabstop=2 |
     \ set softtabstop=2 |
-=======
     \ set tabstop=2
     \ set softtabstop=2
->>>>>>> d1c7c0a7164d121a4657610f7a4ce4f0bfbc1f19
+    \ set tabstop=2
+    \ set softtabstop=2
     \ set shiftwidth=2
