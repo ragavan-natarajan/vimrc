@@ -1,3 +1,19 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" First do the following in order to install Vundle, the plugin manager        "
+"------------------------------------------------------------------------------"
+"                                                                              "  
+"git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
+"                                                                              " 
+"                                                                              " 
+" On Mac install the latest version of Vim as follows                          "
+" ===================================================                          "                          
+"                                                                              "  
+" brew install vim                                                             " 
+"                                                                              "
+" Add the following line to ~/.bash_profile                                    "
+" ===========================================                                  "
+" alias vim=/usr/local/Cellar/vim/8.0.0386/bin/vim                             "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -82,6 +98,7 @@ noremap <silent><esc> <esc>:noh<CR><esc>
 noremap <silent><C-e> :NERDTreeToggle<cr>
 
 syntax enable
+set background=dark
 colorscheme solarized
 :set background=light
 :set modifiable
@@ -102,6 +119,20 @@ noremap <C-n> :bn<cr>
 noremap <C-p> :bp<cr>
 noremap <C-l> :set invnumber<cr>
 
+let g:SimpylFold_docstring_preview = 1
+"
+" Indentation for python code
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix 
+
+" For highlighting bad whitespace
+highlight BadWhitespace ctermbg=red guibg=red
 " To make the nerdtree separator a vertical bar instead of showing pipes
 :set fillchars+=vert:\ 
 highlight VertSplit ctermbg=NONE
@@ -122,6 +153,10 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " Indentation for full stack 
 au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set tabstop=2
+    \ set softtabstop=2
     \ set tabstop=2
     \ set softtabstop=2
     \ set shiftwidth=2
