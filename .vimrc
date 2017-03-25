@@ -100,7 +100,7 @@ noremap <silent><C-e> :NERDTreeToggle<cr>
 syntax enable
 set background=dark
 colorscheme solarized
-:set background=light
+:set background=dark
 :set modifiable
 autocmd VimEnter * NERDTree
 
@@ -149,3 +149,9 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2
     \ set softtabstop=2
     \ set shiftwidth=2
+
+" By default searches with / would be case insensitive
+" If a case-sensitive search is desired ass \C
+set ignorecase
+" Would automatically do a case sensitive search if uppercase is typed.
+set smartcase
