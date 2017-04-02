@@ -139,6 +139,7 @@ highlight VertSplit ctermfg=NONE
 " For highlighting bad whitespace
 highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+au BufRead,BufNewFile *.dockerfile set filetype=dockerfile
 
 " Indentation for full stack 
 au BufNewFile,BufRead *.js, *.html, *.css
