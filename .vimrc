@@ -28,6 +28,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Nerdtree plugin
 Plugin 'scrooloose/nerdtree.git'
 " Rainbow Paranthesis
+" Plugin 'luochen1990/rainbow'
 Plugin 'kien/rainbow_parentheses.vim.git'
 " Scala Syntax highlighting
 Plugin 'derekwyatt/vim-scala.git'
@@ -81,10 +82,28 @@ filetype plugin indent on    " required
 " autocmd VimEnter * RainbowParenthesesActivate
 :set encoding=utf-8
 
-au VimEnter,BufEnter * RainbowParenthesesActivate
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
 au VimEnter,BufEnter * RainbowParenthesesLoadRound
 au VimEnter,BufEnter * RainbowParenthesesLoadSquare
 au VimEnter,BufEnter * RainbowParenthesesLoadBraces
+au VimEnter,BufEnter * RainbowParenthesesActivate
+"let g:rainbow_active = 1
+
 :set nu
 :set tw=80
 :set ai
