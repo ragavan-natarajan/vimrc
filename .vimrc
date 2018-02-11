@@ -64,6 +64,8 @@ Plugin 'tpope/vim-obsession.git'
 Plugin 'tmhedberg/SimpylFold'
 " Python's PEP8 standard indentation
 Plugin 'vim-scripts/indentpython.vim'
+" YouCompleteMe code completion 
+Plugin 'Valloric/YouCompleteMe.git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -175,3 +177,6 @@ au BufNewFile,BufRead *.js, *.html, *.css
 set ignorecase
 " Would automatically do a case sensitive search if uppercase is typed.
 set smartcase
+
+" Required by YouCompleteMe for c-lang completion
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
