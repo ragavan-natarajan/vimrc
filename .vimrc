@@ -66,6 +66,8 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 " YouCompleteMe code completion 
 Plugin 'Valloric/YouCompleteMe.git'
+" SingleCompile plugin for Compiling and running C++ programs
+Plugin 'xuhdev/SingleCompile'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -180,3 +182,8 @@ set smartcase
 
 " Required by YouCompleteMe for c-lang completion
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+
+" The following mappings enables C++ code to be compiled and run.
+" It requires the plugin 'xuhdev/SingleCompile' to be installed.
+nmap <C-S-C> :SCCompile<cr><cr>
+nmap <C-S-R> :SCCompileRun<cr><cr>
