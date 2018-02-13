@@ -185,5 +185,5 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/
 
 " The following mappings enables C++ code to be compiled and run.
 " It requires the plugin 'xuhdev/SingleCompile' to be installed.
-nmap <C-S-C> :SCCompile<cr><cr>
-nmap <C-S-R> :SCCompileRun<cr><cr>
+nmap <C-m> :SCCompileAF -std=c++11<cr><cr>
+nmap <C-x> :SCCompileRunAF -std=c++11<cr><cr>
