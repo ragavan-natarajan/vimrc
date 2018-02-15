@@ -187,3 +187,7 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/
 " It requires the plugin 'xuhdev/SingleCompile' to be installed.
 nmap <C-m> :SCCompileAF -std=c++11<cr><cr>
 nmap <C-x> :SCCompileRunAF -std=c++11<cr><cr>
+
+" To highlight column after textwidth
+set colorcolumn=+1 
+highlight ColorColumn ctermbg=cyan ctermfg=red
