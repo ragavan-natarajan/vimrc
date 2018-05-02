@@ -68,6 +68,8 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'Valloric/YouCompleteMe.git'
 " SingleCompile plugin for Compiling and running C++ programs
 Plugin 'xuhdev/SingleCompile'
+" Plugin for LaTeX on vim 
+Plugin 'lervag/vimtex'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -191,3 +193,7 @@ nmap <C-x> :SCCompileRunAF -std=c++11<cr><cr>
 " To highlight column after textwidth
 set colorcolumn=+1 
 highlight ColorColumn ctermbg=cyan ctermfg=red
+
+" Disable client server callback for vimtex
+let g:vimtex_compiler_latexmk = {'callback' : 0}
+let g:tex_flavor = 'latex'
