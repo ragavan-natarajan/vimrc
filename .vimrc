@@ -197,3 +197,6 @@ highlight ColorColumn ctermbg=cyan ctermfg=red
 " Disable client server callback for vimtex
 let g:vimtex_compiler_latexmk = {'callback' : 0}
 let g:tex_flavor = 'latex'
+
+" Reset CTRL+U and CTRL+D to default scrolling 
+set scroll=0
