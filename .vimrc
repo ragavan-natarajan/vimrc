@@ -200,3 +200,4 @@ let g:tex_flavor = 'latex'
 
 " Reset CTRL+U and CTRL+D to default scrolling 
 set scroll=0
+set spell spelllang=en_us
