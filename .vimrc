@@ -200,4 +200,6 @@ let g:tex_flavor = 'latex'
 
 " Reset CTRL+U and CTRL+D to default scrolling 
 set scroll=0
+" Enables spell checking. ]s and [s could be used to check forward and backward
+" respectively.
 set spell spelllang=en_us
