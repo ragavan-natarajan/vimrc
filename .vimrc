@@ -7,12 +7,30 @@
 "                                                                              " 
 " On Mac install the latest version of Vim as follows                          "
 " ===================================================                          "                          
-"                                                                              "  
 " brew install vim                                                             " 
 "                                                                              "
 " Add the following line to ~/.bash_profile                                    "
 " ===========================================                                  "
 " alias vim=/usr/local/Cellar/vim/8.0.0386/bin/vim                             "
+"
+" Do the following to install YouCompleteMe
+" =========================================
+" sudo apt-get -y install python-dev python3-dev
+" sudo apt-get -y install build-essential cmake 
+"
+"       If the installation with Vundle got stuck, then do the following
+"       ----------------------------------------------------------------
+"       cd ~/.vim/bundle/YouCompleteMe
+"       git submodule update --init --recursive
+"
+" Even if vundle got successful, the following should be run
+" ----------------------------------------------------------
+" cd ~/.vim/bundle/YouCompleteMe
+"
+" ./install.py --all
+"           or 
+" ./install.py --clang-complete
+"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
 filetype off                  " required
