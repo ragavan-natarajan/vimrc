@@ -12,25 +12,25 @@
 " Add the following line to ~/.bash_profile                                    "
 " ===========================================                                  "
 " alias vim=/usr/local/Cellar/vim/8.0.0386/bin/vim                             "
-"
-" Do the following to install YouCompleteMe
-" =========================================
-" sudo apt-get -y install python-dev python3-dev
-" sudo apt-get -y install build-essential cmake 
-"
-"       If the installation with Vundle got stuck, then do the following
-"       ----------------------------------------------------------------
-"       cd ~/.vim/bundle/YouCompleteMe
-"       git submodule update --init --recursive
-"
-" Even if vundle got successful, the following should be run
-" ----------------------------------------------------------
-" cd ~/.vim/bundle/YouCompleteMe
-"
-" ./install.py --all
-"           or 
-" ./install.py --clang-complete
-"
+"                                                                              "
+" Do the following to install YouCompleteMe                                    "
+" =========================================                                    "
+" sudo apt-get -y install python-dev python3-dev                               "
+" sudo apt-get -y install build-essential cmake                                "
+"                                                                              "
+"       If the installation with Vundle got stuck, then do the following       "
+"       ----------------------------------------------------------------       "
+"       cd ~/.vim/bundle/YouCompleteMe                                         "
+"       git submodule update --init --recursive                                "
+"                                                                              "
+" Even if vundle got successful, the following should be run                   "
+" ----------------------------------------------------------                   "
+" cd ~/.vim/bundle/YouCompleteMe                                               "
+"                                                                              "
+" ./install.py --all                                                           "
+"           or                                                                 "
+" ./install.py --clang-complete                                                "
+"                                                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -221,3 +221,9 @@ set scroll=0
 " Enables spell checking. ]s and [s could be used to check forward and backward
 " respectively.
 set spell spelllang=en_us
+
+" This option enables to select an nth character even if the line is not that
+" long. This is useful, for example, if you would like to draw a vertical line
+" to mark a column separator in a table of varying line lengths. This could be
+" turned off by :set virtualedit=
+set virtualedit=all
