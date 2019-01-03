@@ -179,6 +179,9 @@ au BufNewFile,BufRead *.py
 highlight VertSplit ctermbg=NONE
 highlight VertSplit ctermfg=NONE
 
+" To set the NERDTree separator to 15 characters width
+:let g:NERDTreeWinSize=22
+
 " For highlighting bad whitespace
 highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
