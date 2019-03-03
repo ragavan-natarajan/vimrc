@@ -30,6 +30,10 @@
 " ./install.py --all                                                           "
 "           or                                                                 "
 " ./install.py --clang-complete                                                "
+"
+" To install Go binaries required by the vim-go plugin, do the following
+"
+" :GoInstallBinaries
 "                                                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
@@ -88,6 +92,8 @@ Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'xuhdev/SingleCompile'
 " Plugin for LaTeX on vim 
 Plugin 'lervag/vimtex'
+" Plugin for Go development on vim
+Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -179,6 +185,9 @@ au BufNewFile,BufRead *.py
 highlight VertSplit ctermbg=NONE
 highlight VertSplit ctermfg=NONE
 
+" To set the NERDTree separator to 15 characters width
+:let g:NERDTreeWinSize=22
+
 " For highlighting bad whitespace
 highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
@@ -227,3 +236,5 @@ set spell spelllang=en_us
 " to mark a column separator in a table of varying line lengths. This could be
 " turned off by :set virtualedit=
 set virtualedit=all
+
+set autowrite
