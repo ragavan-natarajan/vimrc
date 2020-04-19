@@ -211,6 +211,7 @@ set smartcase
 
 " Required by YouCompleteMe for c-lang completion
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " The following mappings enables C++ code to be compiled and run.
 " It requires the plugin 'xuhdev/SingleCompile' to be installed.
