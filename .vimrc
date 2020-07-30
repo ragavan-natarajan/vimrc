@@ -38,6 +38,11 @@
 " You will need python3.8-venv to install black. So if the black plugin
 " installation fails, make sure you do 'sudo apt-get install python3.8-venv'
 " and remove the black directory inside .vim and reattempt :PluginInstall
+" 
+" Do the following only if Plugininstall failed for black
+" More info here: https://github.com/psf/black/issues/1293
+" source ~/.vim/black/bin/activate
+" pip install --upgrade git+https://github.com/psf/black.git
 "                                                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
@@ -98,8 +103,8 @@ Plugin 'xuhdev/SingleCompile'
 Plugin 'lervag/vimtex'
 " Plugin for Go development on vim
 Plugin 'fatih/vim-go'
-" Plugin for black
-Plugin 'ambv/black', {'rtp': 'vim'}
+" Plugin for black for Python code formatting according to PEP 8.
+Plugin 'psf/black'
 
 
 " All of your Plugins must be added before the following line
@@ -246,3 +251,7 @@ set spell spelllang=en_us
 set virtualedit=all
 
 set autowrite
+
+" command! Black :py3 Black()
+" command! BlackUpgrade :py3 BlackUpgrade()
+" command! BlackVersion :py3 BlackVersion()
