@@ -1,13 +1,11 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " First do the following in order to install Vundle, the plugin manager        "
 "------------------------------------------------------------------------------"
-"                                                                              "  
 "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
-"                                                                              " 
-"                                                                              " 
+"                                                                              "
+"                                                                              "
 " On Mac install the latest version of Vim as follows                          "
-" ===================================================                          "                          
-" brew install vim                                                             " 
+" brew install vim                                                             "
 "                                                                              "
 " Add the following line to ~/.bash_profile                                    "
 " ===========================================                                  "
@@ -34,6 +32,12 @@
 " To install Go binaries required by the vim-go plugin, do the following
 "
 " :GoInstallBinaries
+"
+" Black
+" -----
+" You will need python3.8-venv to install black. So if the black plugin
+" installation fails, make sure you do 'sudo apt-get install python3.8-venv'
+" and remove the black directory inside .vim and reattempt :PluginInstall
 "                                                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
@@ -94,6 +98,9 @@ Plugin 'xuhdev/SingleCompile'
 Plugin 'lervag/vimtex'
 " Plugin for Go development on vim
 Plugin 'fatih/vim-go'
+" Plugin for black
+Plugin 'ambv/black', {'rtp': 'vim'}
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -215,7 +222,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 
 " The following mappings enables C++ code to be compiled and run.
 " It requires the plugin 'xuhdev/SingleCompile' to be installed.
-nmap <C-m> :SCCompileAF -std=c++11<cr><cr>
+nmap <C-m> :SCCompileAF -std=c++11 -Werror -Wall<cr><cr>
 nmap <C-x> :SCCompileRunAF -std=c++11<cr><cr>
 
 " To highlight column after textwidth
