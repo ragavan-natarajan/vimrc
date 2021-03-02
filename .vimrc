@@ -206,9 +206,10 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 au BufRead,BufNewFile *.dockerfile set filetype=dockerfile
 
 " Indentation for full stack
-au BufNewFile,BufRead *.js,*.html,*.css
+au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2 |
-    \ set softtabstop=2
+    \ set softtabstop=2 |
+    \ set shiftwidth=2
 
 " By default searches with / would be case insensitive
 " If a case-sensitive search is desired ass \C
@@ -220,10 +221,11 @@ set smartcase
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
 
+au BufRead,BufEnter,BufNewFile *.md map <C-m> :!markdownlint %<CR>
+au BufRead,BufEnter,BufNewFile *.c,*.cc,*.cpp nmap <C-m> :SCCompileAF -std=c++11 -Werror -Wall<cr><cr>
+au BufRead,BufEnter,BufNewFile *.c,*.cc,*.cpp nmap <C-x> :SCCompileRunAF -std=c++11<cr><cr>
 " The following mappings enables C++ code to be compiled and run.
 " It requires the plugin 'xuhdev/SingleCompile' to be installed.
-nmap <C-m> :SCCompileAF -std=c++11 -Werror -Wall<cr><cr>
-nmap <C-x> :SCCompileRunAF -std=c++11<cr><cr>
 
 " To highlight column after textwidth
 set colorcolumn=+1 
